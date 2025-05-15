@@ -1,0 +1,1 @@
+buatkan saya sebuah program berbahasa c yang menghapus elemen tengah dari stack menggunakan hanya operasi dasar stack yaitu push(), pop(), dan empty() tanpa menggunakan struktur data tambahan dengan input (10, 20, 30, 40, 50) dan Output (50, 40, 20, 10)
