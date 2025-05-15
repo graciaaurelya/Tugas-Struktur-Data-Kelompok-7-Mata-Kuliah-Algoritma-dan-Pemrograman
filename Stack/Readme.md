@@ -14,7 +14,8 @@ Menghapus elemen tengah dari stack menggunakan hanya operasi dasar stack yaitu p
 Gunakan rekursi untuk memproses elemen stack satu per satu dari atas ke bawah.
 
 Langkah Penyelesaian :
-1. Hitung posisi tengah berdasarkan ukuran stack.
-2. Pop elemen satu per satu hingga mencapai elemen tengah.
-3. Lewati (tidak push kembali) elemen tengah saat stack dibangun kembali dalam proses backtracking rekursi.
-4. Push kembali elemen-elemen lain agar urutan tetap sama kecuali elemen tengah yang dihapus.
+1. Gunakan rekursi untuk memproses elemen stack satu per satu dari atas ke bawah.
+2. Hitung posisi tengah berdasarkan ukuran stack.
+3. Pop elemen satu per satu hingga mencapai elemen tengah.
+4. Lewati (tidak push kembali) elemen tengah saat stack dibangun kembali dalam proses backtracking rekursi.
+5. Push kembali elemen-elemen lain agar urutan tetap sama kecuali elemen tengah yang dihapus.
