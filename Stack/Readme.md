@@ -10,4 +10,11 @@ Difficulty:
 Easy     
 
 ## Short Approach Summary
-Hapus elemen tengah dari sebuah stack tanpa menggunakan struktur data tambahan seperti array atau  list.  
+Menghapus elemen tengah dari stack menggunakan hanya operasi dasar stack yaitu push(), pop(), dan empty() tanpa menggunakan struktur data tambahan.  L
+Gunakan rekursi untuk memproses elemen stack satu per satu dari atas ke bawah.
+
+Langkah Penyelesaian :
+1. Hitung posisi tengah berdasarkan ukuran stack.
+2. Pop elemen satu per satu hingga mencapai elemen tengah.
+3. Lewati (tidak push kembali) elemen tengah saat stack dibangun kembali dalam proses backtracking rekursi.
+4. Push kembali elemen-elemen lain agar urutan tetap sama kecuali elemen tengah yang dihapus.
