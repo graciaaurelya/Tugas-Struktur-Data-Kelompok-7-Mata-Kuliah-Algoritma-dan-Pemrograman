@@ -1,57 +1,38 @@
-#include <stdio.h>
+#include <iostream>
+#include <stack>
+using namespace std;
 
-#define MAX 10
-
-int stack[MAX];
-int top = -1;
-
-// Fungsi push
-void push(int val) {
-    if (top < MAX - 1) {
-        stack[++top] = val;
+void deleteMid(stack<int>& st, int current, int mid) {
+    if (st.empty() || current == mid) {
+        st.pop(); // Hapus elemen tengah
+        return;
     }
+
+    int topElement = st.top();
+    st.pop();
+    deleteMid(st, current + 1, mid);
+    st.push(topElement); // Kembalikan elemen setelah rekursi selesai
 }
 
-// Fungsi pop
-int pop() {
-    if (top >= 0) {
-        return stack[top--];
-    }
-    return -1;
-}
-
-// Fungsi untuk menghapus elemen tengah secara rekursif
-void deleteMidUtil(int curr, int mid) {
-    if (top == -1) return;
-
-    int x = pop();
-
-    if (curr != mid) {
-        deleteMidUtil(curr + 1, mid);
-        push(x);  // Kembalikan elemen selain tengah
-    }
-    // Jika curr == mid, kita tidak push kembali -> elemen tengah dihapus
-}
-
-void deleteMid() {
-    int size = top + 1;
-    int mid = size / 2; // 0-based indexing dari atas
-    deleteMidUtil(0, mid);
+void deleteMid(stack<int>& st) {
+    int mid = st.size() / 2;
+    deleteMid(st, 0, mid);
 }
 
 int main() {
-    // Isi stack
-    push(10);
-    push(20);
-    push(30);
-    push(40);
-    push(50);
+    stack<int> st;
 
-    deleteMid();
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
+    st.push(50);
 
-    // Cetak stack dari atas ke bawah
-    while (top >= 0) {
-        printf("%d ", pop());
+    deleteMid(st);
+
+    while (!st.empty()) {
+        cout << st.top() << " ";
+        st.pop();
     }
 
     return 0;
