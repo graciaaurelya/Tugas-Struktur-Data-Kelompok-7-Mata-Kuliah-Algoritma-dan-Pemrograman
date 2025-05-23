@@ -4,20 +4,19 @@ Nama : Gracia Aurelya
 NIM : D121241095
 
 ## Problem Link From LeetCode
-https://leetcode.com/problems/implement-queue-using-stacks/description/
+https://www.codewars.com/kata/57b06f90e298a7b53d000a86
 
 ## Difficulty Level
 Easy
 
 ## Short Approach Summary
-1. Gunakan 2 stack : 
-   - stack 1 untuk menambahkan elemen ke antrian (fungsi push).
-   - stack 2  untuk menghapus dan melihat elemen dari depan antrian (fungsi pop dan peek).
+1. Menangani Kasus : Jika tidak ada pelanggan (customers = []), maka waktu total adalah 0.
 
-2. push(x): Ketika kita menambahkan elemen ke antrian, kita cukup memasukkan elemen tersebut ke dalam stack1.
+2. Kasir Tunggal: Jika hanya ada satu kasir, kita cukup menjumlahkan waktu checkout semua pelanggan.
 
-3. pop(): Jika stack2 kosong, kita akan memindahkan semua elemen dari stack1 ke stack2. Ini akan membalikkan urutan elemen sehingga elemen yang paling lama (yang berada di depan antrian) berada di atas stack2, siap untuk dihapus. Setelah itu, kita pop dari stack2.
+3. Beberapa Kasir:
+- Distribusikan pelanggan ke kasir: Jika jumlah pelanggan lebih banyak dari jumlah kasir, kita akan membagikan pelanggan ke kasir yang tersedia. Kasir dengan waktu paling sedikit (yang paling cepat selesai) akan melayani pelanggan berikutnya.
+- Menggunakan penyortiran: Urutkan kasir berdasarkan waktu checkout yang sudah digunakan untuk memastikan pelanggan berikutnya dilayani oleh kasir yang lebih cepat selesai.
+- Perbarui waktu kasir: Untuk setiap pelanggan, tambahkan waktu checkout mereka ke kasir yang mereka pilih.
 
-4. peek(): Sama seperti pop, tetapi kita hanya mengakses elemen yang berada di depan (top dari stack2) tanpa menghapusnya.
-   
-5. empty(): Antrian kosong jika kedua stack, stack1 dan stack2, kosong.
+4. Waktu Akhir: Waktu total yang dibutuhkan adalah waktu yang dibutuhkan oleh kasir yang selesai paling lama, karena ini menunjukkan kapan pelanggan terakhir selesai checkout.
