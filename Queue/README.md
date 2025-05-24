@@ -7,7 +7,7 @@ NIM : D121241095
 https://www.codewars.com/kata/57b06f90e298a7b53d000a86
 
 ## Difficulty Level
-Easy
+Intermediate
 
 ## Short Approach Summary
 1. Menangani Kasus : Jika tidak ada pelanggan (customers = []), maka waktu total adalah 0.
